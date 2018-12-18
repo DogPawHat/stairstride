@@ -1,29 +1,25 @@
 package request;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import models.StairCountRequest;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import logic.StairCounter;
 
 @RestController
 public class StairCountController {
 
-    @RequestMapping("/stair_count")
-    public StairCountRequest stairCountRequest(
-            @RequestParam(name="flights") String flights,
-            @RequestParam(name="stride") String stride
+    @GetMapping("/stair_count")
+    @ResponseBody
+    public StairCountResponse stairCountRequest(
+            @RequestParam(name="flights") List<Integer> flights,
+            @RequestParam(name="stride") int stride
     ) {
-        List<Integer> flightsList =
-                Arrays.stream(flights.split(","))
-                        .map(Integer::parseInt)
-                        .collect(Collectors.toList());
+        int result = StairCounter.countStairs(flights,stride);
 
-        return new countStairs(StairCountRequest(flightsList,Integer.parseInt(stride)));
+        return new StairCountResponse(result);
     }
 }

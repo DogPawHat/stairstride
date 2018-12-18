@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <h1><a id="Welcome_to_StairStride_0"></a>Welcome to StairStride</h1>
+    <p>
+      To use the API, send a request to the url in the following manner:<br />
+      https://{{currentURL}}/stair_count?flights=17,17&amp;stride=2
+    </p>
+    <p>Query Params:</p>
+    <ul>
+      <li>
+        flights: comma seprated array of stair counts for each flight of stairs
+      </li>
+      <li>
+        stride: the max number of steps that can be taken in a single stride
+      </li>
+    </ul>
+    <p>Returns a Json object in the format:</p>
+    <ul>
+      <li>totalStrides: minimum number of strides to go up the stairwell</li>
+    </ul>
+  </body>
+</html>

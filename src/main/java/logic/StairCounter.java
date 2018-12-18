@@ -1,7 +1,5 @@
 package logic;
 
-import models.StairCountRequest;
-
 import java.util.List;
 
 
@@ -10,11 +8,9 @@ interface MinFlightPerStride {
 }
 
 public class StairCounter {
-    public static int countStairs(StairCountRequest stairCountRequest) {
+    public static int countStairs(List<Integer> flights, int stride) {
 
-        List<Integer> flights = stairCountRequest.getFlights();
-
-        MinFlightPerStride minFlightPerStride = (flight) -> (int) Math.ceil((double) flight/(double) stairCountRequest.getStride());
+        MinFlightPerStride minFlightPerStride = (flight) -> (int) Math.ceil((double) flight/(double) stride);
 
         int landingStrides = 2 * (flights.size() -1) ;
 

@@ -1,6 +1,5 @@
 package logic;
 
-import models.StairCountRequest;
 import org.testng.annotations.*;
 
 import java.util.Arrays;
@@ -13,9 +12,7 @@ public class StairCountServiceTest {
         List<Integer> flights = Arrays.asList(17);
         int stride = 3;
 
-        StairCountRequest stairCountRequest = new StairCountRequest(flights,stride);
-
-        int result = StairCounter.countStairs(stairCountRequest);
+        int result = StairCounter.countStairs(flights,stride);
 
         System.out.println(result);
         assert 6 == result;
@@ -26,9 +23,7 @@ public class StairCountServiceTest {
         List<Integer> flights = Arrays.asList(17,17);
         int stride = 3;
 
-        StairCountRequest stairCountRequest = new StairCountRequest(flights, stride);
-
-        int result = StairCounter.countStairs(stairCountRequest);
+        int result = StairCounter.countStairs(flights,stride);
 
         assert 14 == result;
     }
@@ -38,9 +33,7 @@ public class StairCountServiceTest {
         List<Integer> flights = Arrays.asList(4,9,8,11,7,20,14);
         int stride = 2;
 
-        StairCountRequest stairCountRequest = new StairCountRequest(flights,stride);
-
-        int result = StairCounter.countStairs(stairCountRequest);
+        int result = StairCounter.countStairs(flights,stride);
 
         assert 50 == result;
     }

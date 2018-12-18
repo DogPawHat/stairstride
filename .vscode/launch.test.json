@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "stairstride",
+                "projectName": "stairstride",
+                "workingDirectory": "/home/dogpawhat/Development/stairstride",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "stairstride",
+                "projectName": "stairstride",
+                "workingDirectory": "/home/dogpawhat/Development/stairstride",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
